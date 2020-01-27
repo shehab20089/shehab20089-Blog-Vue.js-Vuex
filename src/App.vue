@@ -1,27 +1,38 @@
 <template>
   <!-- I used vutify css farmework for vue js which applies google's material design -->
   <v-app>
-    <v-app-bar color="orange" app>
-      <div class="d-flex">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="./assets/blogger-logo.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <div class="grey lighten-3">
+      <v-app-bar color="orange" app>
+        <div class="d-flex">
+          <v-img
+            alt="Vuetify Logo"
+            class="shrink mr-2"
+            contain
+            src="./assets/blogger-logo.png"
+            transition="scale-transition"
+            width="40"
+          />
 
-        <h1>Blog Task</h1>
-      </div>
+          <h1 class="font-weight-black">
+            Blog
+            <span class="font-weight-medium">Task</span>
+          </h1>
+        </div>
 
-      <!-- here v spacer will take all avialbe space  -->
-      <v-spacer></v-spacer>
-    </v-app-bar>
+        <!-- here v spacer will take all avialbe space  -->
+        <v-spacer></v-spacer>
+      </v-app-bar>
 
-    <v-content class="grey lighten-4 mt-11">
-      <router-view></router-view>
-    </v-content>
+      <v-content class="my-11">
+        <router-view></router-view>
+      </v-content>
+      <v-footer class="black font-weight-medium">
+        <v-col class="text-center orange--text" cols="12">
+          {{ new Date().getFullYear() }} —
+          <strong>BlogTask</strong>
+        </v-col>
+      </v-footer>
+    </div>
   </v-app>
 </template>
 
