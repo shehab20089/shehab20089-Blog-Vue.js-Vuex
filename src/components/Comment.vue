@@ -7,9 +7,7 @@
         <v-divider></v-divider>
 
         <v-list-item v-for="(comment, index) in getPostById(postId).comments" :key="index">
-          <v-list-item-avatar size="50" color="grey">
-            <!-- <v-img></v-img> -->
-          </v-list-item-avatar>
+          <v-list-item-avatar size="50" color="grey"></v-list-item-avatar>
 
           <v-list-item-content>
             <v-list-item-title class="title">{{comment.author}}</v-list-item-title>

@@ -61,11 +61,6 @@ export default {
 </script>
 
 <style scoped>
-/* to remove the text decoration of the router link */
-a {
-  text-decoration: none;
-}
-
 /*  scale up when hover with transtion */
 .hover-effect {
   transition: transform 0.2s;

@@ -10,11 +10,13 @@ const routes = [
   //using routePaths class to easily write the path of every route
   {
     //the path to the home page
+    name: "home",
     path: routePaths.Home,
     component: Home
   },
   {
     //the path to the post page while sending the id of the post as a parmeter
+    name: "post",
     path: routePaths.Post + "/:id",
     component: Post
   }
