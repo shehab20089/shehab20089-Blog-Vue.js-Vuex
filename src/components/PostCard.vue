@@ -31,7 +31,7 @@
         <v-spacer></v-spacer>
         <div>
           <v-btn disabled text>
-            {{postData.comments.length}} Comments
+            {{commentNum}} Comments
             <v-icon right>mdi-comment</v-icon>
           </v-btn>
         </div>
@@ -45,7 +45,8 @@ import route from "../router/routePaths";
 
 export default {
   props: {
-    postData: Object
+    postData: Object,
+    commentNum: Number
   },
 
   data() {

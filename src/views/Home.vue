@@ -2,7 +2,7 @@
   <div>
     <div v-for="(post, index) in getPosts()" :key="index">
       <!-- using my created postcard component to view the post content -->
-      <postCard class="mb-10" :postData="post" />
+      <postCard class="mb-10" :postData="post" :commentNum="getcommentLength(post.id)" />
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
     postCard
   },
   computed: {
-    ...mapGetters([getters.getPosts])
+    ...mapGetters([getters.getPosts, getters.getcommentLength])
   }
 };
 </script>
