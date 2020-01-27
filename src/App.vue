@@ -52,11 +52,6 @@ export default {
 
   components: {},
 
-  data: () => ({
-    //
-  })
+  data: () => ({})
 };
 </script>
-
-<style >
-</style>
