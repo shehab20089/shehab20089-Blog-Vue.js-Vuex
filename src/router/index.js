@@ -20,8 +20,10 @@ const routes = [
   }
 ];
 
+//router instance
 const router = new VueRouter({
   routes,
+  //this will allow us to  rest scroll to the top when navigate to new page
   // eslint-disable-next-line no-unused-vars
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 };

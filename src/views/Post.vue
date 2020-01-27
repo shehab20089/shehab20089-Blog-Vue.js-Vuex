@@ -31,10 +31,10 @@ import StoreConstants from "../store/storeConstants";
 import comment from "../components/Comment";
 
 //this helper will allow to easily acess vuex store easily by using the spread operator
-//it will get all getters from the store
+//it will get all getters from the vuex store
 import { mapGetters } from "vuex";
 
-//just making it easier to acess getters
+//just making it easier to acess getters of the vuex store
 let getters = StoreConstants.getters;
 
 export default {
@@ -42,26 +42,18 @@ export default {
   data() {
     return {
       //the id of the post which  will be passed from the parameters
-      id: this.$route.params.id,
-
-      //adding the level1 comment text to easily add bind it to the iput text field
-      commentText: ""
+      id: this.$route.params.id
     };
   },
   components: {
-    // postCard
+    // adding the comment component to use it in this view
     comment
   },
 
   computed: {
+    //spread opertaor to get selectd getters from vuex store
     ...mapGetters([getters.getPostById])
   }
 };
 </script>
 
-<style>
-.bigdiv {
-  height: 500px;
-  width: 500px;
-}
-</style>

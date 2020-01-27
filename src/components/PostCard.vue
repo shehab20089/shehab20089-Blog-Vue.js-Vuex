@@ -41,11 +41,14 @@
 </template>
 
 <script>
+//easier to acess the route through static properties of a class
 import route from "../router/routePaths";
 
 export default {
   props: {
+    //this is the obj with all data of the post
     postData: Object,
+    //this is a prop for the comments count in this post (1st level + 2nd level)
     commentNum: Number
   },
 
