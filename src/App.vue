@@ -16,14 +16,21 @@
             width="40"
           />
 
-          <h1 class="font-weight-black">
+          <h1 class="font-weight-black ml-auto">
             Blog
             <span class="font-weight-medium">Task</span>
           </h1>
         </div>
+        <v-spacer></v-spacer>
+
+        <router-link v-if="!inHome" class="mx-auto" :to="Routes.Home">
+          <v-btn color="black white--text">
+            back to home
+            <v-icon right>mdi-exit-to-app</v-icon>
+          </v-btn>
+        </router-link>
 
         <!-- here v spacer will take all avialbe space  -->
-        <v-spacer></v-spacer>
       </v-app-bar>
 
       <!-- ----------------------------------------------------------- -->
@@ -47,11 +54,29 @@
 </template>
 
 <script>
+import RoutePaths from "./router/routePaths";
+
 export default {
   name: "App",
 
   components: {},
+  updated() {
+    if (this.$route.name == "home") {
+      this.inHome = true;
+      return;
+    }
+    this.inHome = false;
+  },
 
-  data: () => ({})
+  data: () => ({
+    inHome: false,
+    Routes: RoutePaths
+  })
 };
 </script>
+<style >
+/* to remove the text decoration of the router link */
+a {
+  text-decoration: none;
+}
+</style>
