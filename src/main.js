@@ -11,6 +11,7 @@ Vue.filter("textFilter", function(value) {
   return value.replace(RegExp("flash|xmen|tester", "g"), "");
 });
 
+//the vue instance of our app
 new Vue({
   router,
   store,

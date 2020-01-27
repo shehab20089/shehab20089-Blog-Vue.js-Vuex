@@ -19,7 +19,7 @@
       <v-spacer></v-spacer>
     </v-app-bar>
 
-    <v-content class="grey lighten-4 mt-5">
+    <v-content class="grey lighten-4 mt-11">
       <router-view></router-view>
     </v-content>
   </v-app>

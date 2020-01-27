@@ -1,48 +1,70 @@
 <template>
-  <v-card class="mx-auto" max-width="600">
+  <v-card class="mx-auto hover-effect" max-width="600">
     <!-- ----------------------------------------------------------- -->
     <!-- IMAGE WITH TITLE  AREA-->
     <!-- ----------------------------------------------------------- -->
-    <v-img
-      class="white--text align-end"
-      height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-    >
-      <v-card-title>Top 10 Australian beaches</v-card-title>
-    </v-img>
 
-    <!-- ----------------------------------------------------------- -->
-    <!-- AUTHOR AREA  -->
-    <!-- ----------------------------------------------------------- -->
-    <v-card-text class="text--primary">
-      <div>Posted By :</div>
-      <!-- <v-img > -->
-      <div class="ml-12">Shehab</div>
-    </v-card-text>
+    <router-link :to="route.Posts" class="d-block">
+      <v-img
+        class="white--text align-end"
+        height="200px"
+        v-bind:src="require('../assets/'+postData.image)"
+      >
+        <v-card-title>{{postData.title}}</v-card-title>
+      </v-img>
 
-    <!-- ----------------------------------------------------------- -->
-    <!-- BUTTON AND COMMENT AREA  -->
-    <!-- ----------------------------------------------------------- -->
-    <v-card-actions>
-      <v-btn color="orange" text>Open</v-btn>
-      <v-spacer></v-spacer>
-      <div>
-        <v-btn disabled color="orange" text>
-          10 Comments
-          <v-icon right>mdi-comment</v-icon>
-        </v-btn>
-      </div>
-    </v-card-actions>
+      <!-- ----------------------------------------------------------- -->
+      <!-- AUTHOR AREA  -->
+      <!-- ----------------------------------------------------------- -->
+      <v-card-text class="text--primary">
+        <div>Posted By :</div>
+        <div class="ml-10 headline">{{postData.author}}</div>
+      </v-card-text>
+
+      <!-- ----------------------------------------------------------- -->
+      <!-- BUTTON AND COMMENT NUMBER AREA  -->
+      <!-- ----------------------------------------------------------- -->
+      <v-card-actions>
+        <v-btn color="orange" text>Open</v-btn>
+        <v-spacer></v-spacer>
+        <div>
+          <v-btn disabled text>
+            {{postData.comments.length}} Comments
+            <v-icon right>mdi-comment</v-icon>
+          </v-btn>
+        </div>
+      </v-card-actions>
+    </router-link>
   </v-card>
 </template>
 
 <script>
+import route from "../router/routePaths";
+
 export default {
-  //   props: {
-  //     post
-  //   }
+  props: {
+    postData: Object
+  },
+
+  data() {
+    return {
+      route
+    };
+  }
 };
 </script>
 
-<style>
+<style scoped>
+/* to remove the text decoration of the router link */
+a {
+  text-decoration: none;
+}
+
+/*  scale up when hover with transtion */
+.hover-effect {
+  transition: transform 0.2s;
+}
+.hover-effect:hover {
+  transform: scale(1.07);
+}
 </style>

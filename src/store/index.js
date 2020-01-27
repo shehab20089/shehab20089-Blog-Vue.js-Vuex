@@ -9,7 +9,7 @@ export default new Vuex.Store({
       {
         id: 1,
         title: "title1",
-        image: "../assets/frozed.jpg",
+        image: "paris.jpg",
         author: "writer tester",
         content:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -18,7 +18,7 @@ export default new Vuex.Store({
       {
         id: 2,
         title: "title2",
-        image: "../assets/media.jpg",
+        image: "nightProgrammer.jpg",
         author: "writer tester",
         content:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -27,7 +27,7 @@ export default new Vuex.Store({
       {
         id: 3,
         title: "title3",
-        image: "../assets/child1.jpg",
+        image: "canada.jpg",
         author: "writer tester",
         content:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -36,7 +36,16 @@ export default new Vuex.Store({
       {
         id: 4,
         title: "title4 ",
-        image: "../assets/tokyo-wallpaper-24391-25051-hd-wallpapers.jpg",
+        image: "nature1.jpg",
+        author: "writer tester",
+        content:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        comments: [{}]
+      },
+      {
+        id: 5,
+        title: "title5 ",
+        image: "tokyo.jpg",
         author: "writer tester",
         content:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -49,10 +58,8 @@ export default new Vuex.Store({
   getters: {
     //get posts while filter
     getPosts: state => searchText => {
-      // console.log("arrived");
-
       //return all posts if no search text is passed
-      if (searchText == null) return 10;
+      if (searchText == null) return state.posts;
       //return filter posts by search result
       return state.posts.filter(post => {
         return post.author.includes(searchText);
