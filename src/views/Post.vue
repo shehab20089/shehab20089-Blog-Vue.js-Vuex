@@ -5,8 +5,8 @@
       <v-list-item three-line>
         <v-list-item-content>
           <!-- <div class="overline mb-4">{{}}</div> -->
-          <v-list-item-title class="headline mb-1 display-1">{{getPostById(id).title}}</v-list-item-title>
-          <v-list-item-subtitle>Written by : {{getPostById(id).author}}</v-list-item-subtitle>
+          <v-list-item-title class="headline mb-1 display-1">{{getPostById(id).title |textFilter}}</v-list-item-title>
+          <v-list-item-subtitle>Written by : {{getPostById(id).author |textFilter}}</v-list-item-subtitle>
         </v-list-item-content>
         {{ Date().substring(0,16)}}
         <!-- <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar> -->
@@ -14,7 +14,7 @@
 
       <v-card-text class="text--primary">
         <div></div>
-        <div class="ml-10 meduims">{{getPostById(id).content}}</div>
+        <div class="ml-10 meduims">{{getPostById(id).content |textFilter}}</div>
       </v-card-text>
 
       <v-divider></v-divider>

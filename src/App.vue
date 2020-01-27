@@ -69,7 +69,7 @@ export default {
   },
 
   data: () => ({
-    inHome: false,
+    inHome: true,
     Routes: RoutePaths
   })
 };

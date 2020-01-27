@@ -10,9 +10,9 @@
           <v-list-item-avatar size="50" color="grey"></v-list-item-avatar>
 
           <v-list-item-content>
-            <v-list-item-title class="title">{{comment.author}}</v-list-item-title>
+            <v-list-item-title class="title">{{comment.author |textFilter}}</v-list-item-title>
             <v-list-item-subtitle>{{Date().substring(0,16)}}</v-list-item-subtitle>
-            <p class="body-2">{{comment.commentContent}}</p>
+            <p class="body-2">{{comment.commentContent |textFilter}}</p>
             <v-list three-line>
               <template v-if="comment.secondLComments.length>0">
                 <v-subheader>Replies</v-subheader>
@@ -23,9 +23,9 @@
                   <v-list-item-avatar size="50" color="grey"></v-list-item-avatar>
 
                   <v-list-item-content>
-                    <v-list-item-title class="title">{{commenLvl2.author}}</v-list-item-title>
+                    <v-list-item-title class="title">{{commenLvl2.author|textFilter}}</v-list-item-title>
                     <v-list-item-subtitle>{{Date().substring(0,16)}}</v-list-item-subtitle>
-                    <p class="body-2">{{commenLvl2.commentContent}}</p>
+                    <p class="body-2">{{commenLvl2.commentContent|textFilter}}</p>
                   </v-list-item-content>
                 </v-list-item>
               </template>

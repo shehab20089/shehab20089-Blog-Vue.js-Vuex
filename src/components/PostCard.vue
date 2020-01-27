@@ -12,7 +12,7 @@
         height="200px"
         v-bind:src="require('../assets/'+postData.image)"
       >
-        <v-card-title>{{postData.title}}</v-card-title>
+        <v-card-title>{{postData.title |textFilter}}</v-card-title>
       </v-img>
 
       <!-- ----------------------------------------------------------- -->
@@ -20,7 +20,7 @@
       <!-- ----------------------------------------------------------- -->
       <v-card-text class="text--primary">
         <div>Posted By :</div>
-        <div class="ml-10 headline">{{postData.author}}</div>
+        <div class="ml-10 headline">{{postData.author |textFilter}}</div>
       </v-card-text>
 
       <!-- ----------------------------------------------------------- -->
