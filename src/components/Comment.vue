@@ -2,7 +2,7 @@
   <div class="ma-5">
     <v-list three-line>
       <template>
-        <v-subheader class="headline black--text">Comments</v-subheader>
+        <v-subheader class="headline black--text">Comments ({{getcommentLength(postId)}})</v-subheader>
 
         <v-divider></v-divider>
 
@@ -94,9 +94,7 @@ export default {
       commentText: ""
     };
   },
-  components: {
-    // postCard
-  },
+
   methods: {
     ...mapActions([actions.addComment, actions.addlvl2Comment]),
 
@@ -137,7 +135,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([getters.getPostById])
+    ...mapGetters([getters.getPostById, getters.getcommentLength])
   }
 };
 </script>
