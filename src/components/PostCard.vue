@@ -1,10 +1,12 @@
 <template>
+  <!-- using vutify farmework card for this component -->
+
   <v-card class="mx-auto hover-effect" max-width="600">
     <!-- ----------------------------------------------------------- -->
     <!-- IMAGE WITH TITLE  AREA-->
     <!-- ----------------------------------------------------------- -->
 
-    <router-link :to="route.Posts" class="d-block">
+    <router-link :to=" route.Post+`/${postData.id}` " class="d-block">
       <v-img
         class="white--text align-end"
         height="200px"
