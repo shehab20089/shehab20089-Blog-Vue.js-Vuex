@@ -22,7 +22,7 @@
           </h1>
         </div>
         <v-spacer></v-spacer>
-
+        <!-- check if in home page or not -->
         <router-link v-if="!inHome" class="mx-auto" :to="Routes.Home">
           <v-btn color="black white--text">
             back to home
@@ -60,6 +60,8 @@ export default {
   name: "App",
 
   components: {},
+  //check every update that the route is equal to home or not
+  // if yes we will use this value to show or hide button link to
   updated() {
     if (this.$route.name == "home") {
       this.inHome = true;
