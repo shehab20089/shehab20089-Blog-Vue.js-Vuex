@@ -8,7 +8,7 @@ Vue.config.productionTip = false;
 
 //this is the filter which will allow me to exclude any word from flash or xmen or tester
 Vue.filter("textFilter", function(value) {
-  return value.replace(RegExp("flash|xmen|tester", "g"), "");
+  return value.toLowerCase().replace(RegExp("flash|xmen|tester", "g"), "");
 });
 
 //the vue instance of our app
