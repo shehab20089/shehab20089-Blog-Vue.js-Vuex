@@ -46,7 +46,9 @@
                   solo
                   clearable
                   rounded
+                  :ref="'lvl2Comment'+index"
                   :id="'lvl2Comment'+index"
+                  value
                   dense
                   name="comment"
                   hint="press enter to add Comment"
@@ -69,10 +71,10 @@
         class="mt-2"
         solo
         ref="CommentRef"
-        clearable
         v-model="commentText"
         rounded
         dense
+        clearable
         name="comment"
         hint="press enter to add  Comment"
         label="Add Comment"
@@ -130,14 +132,17 @@ export default {
 
     addComment2LvlStore: function(CommentId, index) {
       //get the element by id cause i can't use the same way as leve1
-      //as there is many many level 2 comment input fields
+      //as there is many many level 2 comments input fields
       let commentLVL2 = document.getElementById("lvl2Comment" + index).value;
-
+      //clearing stacked value of vutify's text field
+      this.$refs["lvl2Comment" + index][0].lazyValue = "";
       document.getElementById("lvl2Comment" + index).value = "";
       let newCommentobj = {
         author: "current User",
         commentContent: commentLVL2
       };
+
+      //dispatching add 2nd level action
       this.addlvl2Comment({
         postid: this.postId,
         commentid: CommentId,
