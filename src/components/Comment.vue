@@ -1,5 +1,8 @@
 <template>
   <div class="ma-5">
+    <!-- ----------------------------------------------------------- -->
+    <!-- FIRST LEVEL COMMENT AREA-->
+    <!-- ----------------------------------------------------------- -->
     <v-list three-line>
       <template>
         <v-subheader class="headline black--text">Comments ({{getcommentLength(postId)}})</v-subheader>
@@ -13,6 +16,9 @@
             <v-list-item-title class="title">{{comment.author |textFilter}}</v-list-item-title>
             <v-list-item-subtitle>{{Date().substring(0,16)}}</v-list-item-subtitle>
             <p class="body-2">{{comment.commentContent |textFilter}}</p>
+            <!-- ----------------------------------------------------------- -->
+            <!-- SECOND LEVEL COMMENT AREA-->
+            <!-- ----------------------------------------------------------- -->
             <v-list three-line>
               <template v-if="comment.secondLComments.length>0">
                 <v-subheader>Replies</v-subheader>
@@ -29,6 +35,9 @@
                   </v-list-item-content>
                 </v-list-item>
               </template>
+              <!-- ----------------------------------------------------------- -->
+              <!-- ADD SECOND LEVEL COMMENT AREA-->
+              <!-- ----------------------------------------------------------- -->
               <div class="d-flex align-content-center">
                 <v-avatar class="mr-6" size="50" color="grey"></v-avatar>
                 <v-text-field
@@ -49,6 +58,10 @@
         </v-list-item>
       </template>
     </v-list>
+
+    <!-- ----------------------------------------------------------- -->
+    <!-- ADD FIRST LEVEL COMMENT AREA-->
+    <!-- ----------------------------------------------------------- -->
     <div class="d-flex align-content-center">
       <v-avatar class="mr-6" size="50" color="grey"></v-avatar>
       <v-text-field
@@ -133,6 +146,7 @@ export default {
     }
   },
   computed: {
+    //as said before i use sperad opertaor with mapgetter obj  to get all selected getter from vuex store
     ...mapGetters([getters.getPostById, getters.getcommentLength])
   }
 };
